@@ -2,621 +2,589 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The World in One Image — Sunday 22 November 2026</title>
+<title>News Image 22 Nov 2026 — Hero-Dominant</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     width: 1024px;
     height: 1024px;
-    background: #faf6ee;
-    font-family: Georgia, serif;
+    background: #f6f1e5;
+    font-family: Arial, sans-serif;
     color: #1a1a1a;
     overflow: hidden;
     position: relative;
   }
   
-  /* 1. HEADER BAND (0-96px) */
-  header {
-    height: 96px;
-    background: #0f1e3a;
-    color: #ffffff;
+  /* MASTHEAD: 0 - 108px */
+  .masthead {
+    height: 108px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: #f6f1e5;
+    padding-top: 10px;
     position: relative;
-    border-bottom: 3px solid #d4a437;
+    border-bottom: 3px double #1a1a1a;
   }
-  header .sub {
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: #d4a437;
-    margin-bottom: 4px;
+  .masthead-top {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #1a1a1a;
     text-transform: uppercase;
+    margin-bottom: 8px;
   }
-  header h1 {
-    font-size: 42px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 1.1;
-  }
-
-  /* 2. WORLD MAP BAND (96-316px, height: 220px) */
-  .map-band {
-    height: 220px;
-    background: #dceaf2;
-    position: relative;
-    border-bottom: 2px solid #c8dbe7;
-    overflow: hidden;
-  }
-  .map-caption {
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    color: #0f1e3a;
-    text-align: center;
-    padding-top: 8px;
-    text-transform: uppercase;
-  }
-  .map-svg-container {
-    width: 1024px;
-    height: 185px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  .pin-label {
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    font-weight: 800;
-    fill: #0f1e3a;
-    letter-spacing: 0.5px;
-  }
-
-  /* 3. HERO SECTION (316-576px, height: 260px) */
-  .hero {
-    height: 260px;
-    padding: 18px 24px;
+  .date-rule-container {
     display: flex;
-    gap: 24px;
-    background: #faf6ee;
-    border-bottom: 2px solid #e2dcd0;
+    align-items: center;
+    width: 780px;
+    justify-content: center;
+    position: relative;
+  }
+  .date-rule {
+    flex-grow: 1;
+    height: 2px;
+    background: #a31621;
+  }
+  .masthead-date {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #a31621;
+    letter-spacing: 5px;
+    padding: 0 16px;
+    text-transform: uppercase;
+  }
+
+  /* HERO PANEL: 108 - 500px (392px tall) */
+  .hero {
+    height: 392px;
+    background: #101d33;
+    display: flex;
+    position: relative;
+    padding: 24px;
+    border-bottom: 2px solid #d4a437;
   }
   .hero-left {
-    width: 56%;
+    width: 58%;
     display: flex;
     flex-direction: column;
     position: relative;
+    padding-right: 16px;
   }
-  .hero-illu {
-    flex: 1;
-    background: #eef3f7;
-    border: 1px solid #d0deea;
-    border-radius: 4px;
+  .hero-svg-box {
+    width: 100%;
+    height: 310px;
     position: relative;
+    background: #16294d;
+    border-radius: 4px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgba(212, 164, 55, 0.3);
+  }
+  .chip-1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background: #a31621;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    z-index: 10;
   }
   .hero-caption {
     font-family: Georgia, serif;
     font-style: italic;
-    font-size: 11px;
-    color: #555;
-    margin-top: 5px;
+    font-size: 12px;
+    color: #cfd8e3;
+    margin-top: 8px;
+    text-align: left;
   }
   .hero-right {
-    width: 44%;
+    width: 42%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    padding-left: 12px;
   }
-  .kicker {
+  .hero-kicker {
     font-family: Arial, sans-serif;
     font-size: 13px;
-    font-weight: 800;
-    color: #c0392b;
-    letter-spacing: 0.8px;
-    margin-bottom: 4px;
+    font-weight: bold;
+    color: #d4a437;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    margin-bottom: 6px;
   }
   .hero-headline {
-    font-size: 26px;
-    font-weight: 700;
-    color: #16294d;
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: bold;
+    color: #ffffff;
     line-height: 1.15;
     margin-bottom: 8px;
   }
-  .summary {
-    font-size: 14px;
-    line-height: 1.35;
-    color: #2a2a2a;
-    margin-bottom: 10px;
+  .hero-subhead {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    color: #cfd8e3;
+    margin-bottom: 8px;
   }
-  .chip-outline {
-    display: inline-block;
+  .hero-summary {
     font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    color: #16294d;
-    border: 1.5px solid #16294d;
-    padding: 3px 8px;
-    border-radius: 3px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-size: 13.5px;
+    color: #d7dee8;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+  .hero-chip-pill {
     align-self: flex-start;
+    background: #a31621;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 7px 14px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
-  /* NUMBER CHIPS */
-  .num-chip {
+  /* MAIN SECTION: 500 - 960px (460px tall) */
+  .main-content {
+    height: 460px;
+    display: flex;
+    padding: 16px 20px;
+    gap: 16px;
+    background: #f6f1e5;
+  }
+  .col-left {
+    width: 608px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .row-item {
+    height: 140px;
+    background: #fffdf7;
+    border: 1px solid #d8d0ba;
+    border-radius: 3px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+  .row-img-box {
+    width: 190px;
+    height: 100%;
+    background: #eae2c6;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-right: 1px solid #d8d0ba;
+  }
+  .row-text-box {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+  .chip-small {
     position: absolute;
     top: 8px;
     left: 8px;
-    width: 26px;
-    height: 26px;
-    background: #c0392b;
-    color: #fff;
+    width: 24px;
+    height: 24px;
+    background: #a31621;
+    color: #ffffff;
     border-radius: 50%;
-    font-family: Arial, sans-serif;
-    font-weight: 800;
-    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    border: 2px solid #fff;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1.5px solid #ffffff;
     z-index: 10;
   }
-
-  /* 4 & 5. GRID ROWS (190px each: Row 1: 576-766px, Row 2: 766-956px) */
-  .grid-row {
-    height: 190px;
-    padding: 12px 24px;
-    display: flex;
-    gap: 16px;
-    background: #faf6ee;
-    border-bottom: 2px solid #e2dcd0;
-  }
-  .card {
-    flex: 1;
-    background: #ffffff;
-    border: 1px solid #e2dcd0;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-  }
-  .card-illu {
-    height: 56px;
-    background: #eef3f7;
-    position: relative;
-    border-bottom: 1px solid #d0deea;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .card-content {
-    padding: 8px 10px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: flex-start;
-  }
-  .card-kicker {
+  .item-kicker {
     font-family: Arial, sans-serif;
-    font-size: 10px;
-    font-weight: 800;
-    color: #c0392b;
-    letter-spacing: 0.5px;
-    margin-bottom: 2px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #a31621;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+    margin-bottom: 3px;
   }
-  .card-headline {
-    font-size: 15px;
-    font-weight: 700;
-    color: #16294d;
+  .item-headline {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1a1a1a;
     line-height: 1.15;
     margin-bottom: 4px;
   }
-  .card-summary {
-    font-size: 11.5px;
-    line-height: 1.3;
-    color: #333;
-  }
-  .card-num-chip {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 22px;
-    height: 22px;
-    background: #c0392b;
-    color: #fff;
-    border-radius: 50%;
-    font-family: Arial, sans-serif;
-    font-weight: 800;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    border: 1.5px solid #fff;
-    z-index: 10;
-  }
-
-  /* 6. FOOTER (956-1024px, 68px tall) */
-  footer {
-    height: 68px;
-    background: #faf6ee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 2px solid #0f1e3a;
+  .item-summary {
     font-family: Arial, sans-serif;
     font-size: 12.5px;
-    font-weight: 700;
-    color: #444;
-    letter-spacing: 0.3px;
+    color: #333333;
+    line-height: 1.3;
+  }
+
+  .col-right {
+    width: 352px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .card-item {
+    height: 140px;
+    background: #fffdf7;
+    border: 1px solid #d8d0ba;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img-strip {
+    width: 100%;
+    height: 52px;
+    background: #eae2c6;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #d8d0ba;
+    flex-shrink: 0;
+  }
+  .card-text-box {
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+  .card-item .item-headline {
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+  .card-item .item-summary {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  /* FOOTER: 960 - 1024px (64px tall) */
+  .footer {
+    height: 64px;
+    background: #f6f1e5;
+    border-top: 2px solid #101d33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 12.5px;
+    color: #555555;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 0 20px;
   }
 </style>
 </head>
 <body>
 
-  <!-- HEADER BAND -->
-  <header>
-    <div class="sub">The World in One Image</div>
-    <h1>Sunday 22 November 2026</h1>
-  </header>
-
-  <!-- WORLD MAP BAND -->
-  <div class="map-band">
-    <div class="map-caption">Seven Stories · Seven Places · One Day</div>
-    <div class="map-svg-container">
-      <svg width="1024" height="185" viewBox="0 0 1024 185" xmlns="http://www.w3.org/2000/svg">
-        <!-- Graticule lines -->
-        <g stroke="#ffffff" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.6">
-          <line x1="120" y1="0" x2="120" y2="185"/>
-          <line x1="240" y1="0" x2="240" y2="185"/>
-          <line x1="360" y1="0" x2="360" y2="185"/>
-          <line x1="480" y1="0" x2="480" y2="185"/>
-          <line x1="600" y1="0" x2="600" y2="185"/>
-          <line x1="720" y1="0" x2="720" y2="185"/>
-          <line x1="840" y1="0" x2="840" y2="185"/>
-          <line x1="960" y1="0" x2="960" y2="185"/>
-          <line x1="0" y1="50" x2="1024" y2="50"/>
-          <line x1="0" y1="120" x2="1024" y2="120"/>
-        </g>
-
-        <!-- Continents (Stylized Landmasses in sand #e6d9b8 with white coastline stroke #ffffff) -->
-        <!-- (a) North America at far left with Mexico's west coast -->
-        <path d="M 40,20 Q 90,10 150,30 Q 180,60 160,100 Q 130,130 145,155 Q 120,165 100,150 Q 80,120 90,80 Q 50,60 40,20 Z" fill="#e6d9b8" stroke="#ffffff" stroke-width="1.5"/>
-        <!-- (b) South America below North America -->
-        <path d="M 120,160 Q 150,155 170,170 Q 180,185 140,185 Q 115,185 120,160 Z" fill="#e6d9b8" stroke="#ffffff" stroke-width="1.5"/>
-        <!-- (c) Africa centre-left below Europe -->
-        <path d="M 410,75 Q 450,65 490,90 Q 510,135 485,175 Q 440,185 410,160 Q 395,120 410,75 Z" fill="#e6d9b8" stroke="#ffffff" stroke-width="1.5"/>
-        <!-- (d) Eurasia as large landmass centre to right -->
-        <path d="M 360,25 Q 430,15 520,20 Q 650,10 800,20 Q 950,15 1010,35 Q 1020,90 960,115 Q 850,105 750,120 Q 600,130 500,110 Q 400,95 360,25 Z" fill="#e6d9b8" stroke="#ffffff" stroke-width="1.5"/>
-        <!-- (e) Australia at far right edge -->
-        <path d="M 940,130 Q 980,120 1024,130 L 1024,185 L 930,185 Q 920,150 940,130 Z" fill="#e6d9b8" stroke="#ffffff" stroke-width="1.5"/>
-
-        <!-- 7 NUMBERED PINS ON MAP -->
-        <!-- Pin function template: group with circle r=12, fill=#c0392b, stroke=#fff stroke-width=2 -->
-        
-        <!-- 7 DUBLIN: Ireland at far west edge of Europe: x380 y45 -> label ABOVE-LEFT -->
-        <g transform="translate(380, 45)">
-          <circle cx="0" cy="0" r="12" fill="#c0392b" stroke="#ffffff" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
-          <text x="0" y="4.5" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" font-size="13">7</text>
-          <text x="-16" y="-15" class="pin-label">7 DUBLIN</text>
-        </g>
-
-        <!-- 3 BRUSSELS: western Europe: x415 y55 -> label BELOW -->
-        <g transform="translate(415, 55)">
-          <circle cx="0" cy="0" r="12" fill="#c0392b" stroke="#ffffff" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
-          <text x="0" y="4.5" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" font-size="13">3</text>
-          <text x="0" y="25" text-anchor="middle" class="pin-label">3 BRUSSELS</text>
-        </g>
-
-        <!-- 1 POLAND: central Europe: x475 y48 -> label ABOVE -->
-        <g transform="translate(475, 48)">
-          <circle cx="0" cy="0" r="12" fill="#c0392b" stroke="#ffffff" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
-          <text x="0" y="4.5" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" font-size="13">1</text>
-          <text x="0" y="-16" text-anchor="middle" class="pin-label">1 POLAND</text>
-        </g>
-
-        <!-- 6 LVIV: western Ukraine: x525 y58 -> label ABOVE-RIGHT -->
-        <g transform="translate(525, 58)">
-          <circle cx="0" cy="0" r="12" fill="#c0392b" stroke="#ffffff" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
-          <text x="0" y="4.5" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" font-size="13">6</text>
-          <text x="16" y="-12" class="pin-label">6 LVIV</text>
-        </g>
-
-        <!-- 4 ANTALYA: southern Turkey: x550 y95 -> label BELOW-LEFT -->
-        <g transform="translate(550, 95)">
-          <circle cx="0" cy="0" r="12" fill="#c0392b" stroke="#ffffff" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
-          <text x="0" y="4.5" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" font-size="13">4</text>
-          <text x="-62" y="16" class="pin-label">4 ANTALYA</text>
-        </g>
-
-        <!-- 2 BAHRAIN: Persian Gulf: x650 y130 -> label RIGHT -->
-        <g transform="translate(650, 130)">
-          <circle cx="0" cy="0" r="12" fill="#c0392b" stroke="#ffffff" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
-          <text x="0" y="4.5" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" font-size="13">2</text>
-          <text x="16" y="4" class="pin-label">2 BAHRAIN</text>
-        </g>
-
-        <!-- 5 GUASAVE: Mexico's Pacific coast (North America, west coast): x125 y145 -> label BELOW -->
-        <g transform="translate(125, 145)">
-          <circle cx="0" cy="0" r="12" fill="#c0392b" stroke="#ffffff" stroke-width="2" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
-          <text x="0" y="4.5" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" font-size="13">5</text>
-          <text x="0" y="24" text-anchor="middle" class="pin-label">5 GUASAVE</text>
-        </g>
-
-      </svg>
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-top">The World In One Image</div>
+    <div class="date-rule-container">
+      <div class="date-rule"></div>
+      <div class="masthead-date">Sunday 22 November 2026</div>
+      <div class="date-rule"></div>
     </div>
   </div>
 
-  <!-- 3. HERO — POLAND / NATO -->
-  <section class="hero">
+  <!-- HERO SECTION -->
+  <div class="hero">
     <div class="hero-left">
-      <div class="num-chip">1</div>
-      <div class="hero-illu">
-        <!-- SVG illustration: Map of Poland in navy, two red explosion starbursts in south-east, missile above, NATO compass star -->
-        <svg width="100%" height="100%" viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg">
-          <!-- Background grid accent -->
-          <g stroke="#d0deea" stroke-width="0.5">
-            <line x1="0" y1="50" x2="450" y2="50"/>
-            <line x1="0" y1="100" x2="450" y2="100"/>
-            <line x1="0" y1="150" x2="450" y2="150"/>
-            <line x1="150" y1="0" x2="150" y2="200"/>
-            <line x1="300" y1="0" x2="300" y2="200"/>
-          </g>
-          <!-- Stylized Poland map shape in navy #16294d (enlarged ~1.3x) -->
-          <path d="M 160,30 L 270,25 L 340,55 L 375,115 L 310,175 L 200,185 L 130,150 L 120,90 Z" fill="#16294d" opacity="0.9"/>
-          <!-- Internal border details -->
-          <path d="M 200,55 L 290,65 L 305,125 L 235,135 Z" fill="none" stroke="#2c3e6b" stroke-width="1.8" stroke-dasharray="4,2"/>
+      <div class="hero-svg-box">
+        <div class="chip-1">1</div>
+        <svg width="100%" height="100%" viewBox="0 0 560 310" preserveAspectRatio="xMidYMid meet">
+          <!-- Background shield / radar lines -->
+          <circle cx="280" cy="155" r="130" fill="none" stroke="#23395d" stroke-width="1.5" stroke-dasharray="4 4" />
+          <circle cx="280" cy="155" r="90" fill="none" stroke="#23395d" stroke-width="1" />
+          <line x1="280" y1="20" x2="280" y2="290" stroke="#23395d" stroke-width="1" stroke-dasharray="2 2" />
+          <line x1="140" y1="155" x2="420" y2="155" stroke="#23395d" stroke-width="1" stroke-dasharray="2 2" />
           
-          <!-- Missile silhouette coming from top-east towards south-east (enlarged ~1.5x) -->
-          <g transform="translate(350, 30) rotate(-35) scale(1.5)">
-            <rect x="-3" y="-15" width="6" height="30" fill="#c0392b" rx="2"/>
-            <polygon points="-3,-15 3,-15 0,-25" fill="#c0392b"/>
-            <polygon points="-3,15 -6,22 0,18 6,22 3,15" fill="#900"/>
-          </g>
-          <line x1="350" y1="30" x2="295" y2="125" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="5,3"/>
-
-          <!-- Red explosion starbursts in south-east -->
-          <g transform="translate(295, 130)">
-            <circle cx="0" cy="0" r="20" fill="#e74c3c" opacity="0.4"/>
-            <circle cx="0" cy="0" r="10" fill="#c0392b"/>
-            <path d="M-22,0 L22,0 M0,-22 L0,22 M-15,-15 L15,15 M-15,15 L15,-15" stroke="#f1c40f" stroke-width="3"/>
-          </g>
-          <g transform="translate(320, 150)">
-            <circle cx="0" cy="0" r="16" fill="#e74c3c" opacity="0.4"/>
-            <circle cx="0" cy="0" r="8" fill="#c0392b"/>
+          <!-- Poland Map: wider than tall, Baltic coast on top, Gdansk notch, SE protrusion, ~1.3x scale -->
+          <g transform="translate(280, 155) scale(1.3) translate(-280, -155)">
+            <path d="M200,85 L230,80 L280,78 L340,82 L380,95 L415,120 L425,160 L410,200 L370,225 L320,230 L270,220 L220,205 L180,175 L165,140 L175,105 Z" fill="#2c4a73" stroke="#ffffff" stroke-width="2.5" />
+            <!-- Inner detail / terrain highlight -->
+            <path d="M210,95 L250,90 L300,88 L350,95 L380,115 L395,145 L385,175 L360,195 L310,205 L260,195 L225,180 L195,150 L185,125 Z" fill="#35588c" stroke="#4a6fa5" stroke-width="1" />
           </g>
 
-          <!-- NATO Compass-star emblem top left -->
-          <g transform="translate(70, 70)">
-            <circle cx="0" cy="0" r="28" fill="none" stroke="#16294d" stroke-width="1.5" stroke-dasharray="3,3"/>
-            <polygon points="0,-22 5,-5 22,0 5,5 0,22 -5,5 -22,0 -5,-5" fill="#16294d"/>
-            <circle cx="0" cy="0" r="4" fill="#d4a437"/>
+          <!-- Warsaw marker & Polish flag -->
+          <circle cx="280" cy="140" r="5" fill="#ffffff" />
+          <circle cx="280" cy="140" r="3" fill="#a31621" />
+          <!-- Flag pole -->
+          <line x1="280" y1="140" x2="280" y2="105" stroke="#ffffff" stroke-width="2" />
+          <!-- Polish flag: white over red -->
+          <rect x="280" y="105" width="22" height="8" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.5" />
+          <rect x="280" y="113" width="22" height="8" fill="#dc143c" stroke="#1a1a1a" stroke-width="0.5" />
+
+          <!-- LARGE NATO Compass Star Emblem in top-right area -->
+          <g transform="translate(450, 75)">
+            <circle cx="0" cy="0" r="32" fill="#101d33" stroke="#ffffff" stroke-width="2" />
+            <!-- 4-pointed compass star white -->
+            <polygon points="0,-26 7,-7 26,0 7,7 0,26 -7,7 -26,0 -7,-7" fill="#ffffff" />
+            <circle cx="0" cy="0" r="4" fill="#101d33" />
           </g>
-          <text x="70" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="800" fill="#16294d" letter-spacing="1">NATO ALLIANCE</text>
         </svg>
       </div>
-      <div class="hero-caption">Russian weapons came down in south-eastern Poland — illustration</div>
+      <div class="hero-caption">NATO chief Rutte in Warsaw: the alliance stands with Poland — illustration</div>
     </div>
     <div class="hero-right">
-      <div class="kicker">Europe · Security</div>
-      <div class="hero-headline">Rutte vows NATO will defend 'every inch' of Poland</div>
-      <div class="summary">NATO chief Mark Rutte visited Warsaw on Saturday and promised the alliance would defend every inch of Polish territory, a day after two Russian missiles and a suspected drone came down in the south-east. No one was hurt.</div>
-      <div class="chip-outline">NATO Council Meets Monday</div>
+      <div>
+        <div class="hero-kicker">Europe · Security</div>
+        <div class="hero-headline">Rutte vows NATO will defend 'every inch' of Poland</div>
+        <div class="hero-subhead">NATO Council meets Monday</div>
+        <div class="hero-summary">NATO secretary general Mark Rutte visited Warsaw and vowed the alliance will defend every inch of Poland, after Russian weapons came down on Polish soil. The NATO Council meets on Monday to discuss the response.</div>
+      </div>
+      <div class="hero-chip-pill">NATO Council Meets Monday</div>
     </div>
-  </section>
+  </div>
 
-  <!-- 4. GRID ROW 1 -->
-  <section class="grid-row">
-    <!-- Card 2: Bahrain -->
-    <div class="card">
-      <div class="card-num-chip">2</div>
-      <div class="card-illu">
-        <!-- SVG: Larger Patriot missile battery silhouette + incoming missile/drone streaks + big flames -->
-        <svg width="100%" height="100%" viewBox="0 0 320 56" xmlns="http://www.w3.org/2000/svg">
-          <rect width="320" height="56" fill="#eef3f7"/>
-          <!-- Skyline silhouette -->
-          <rect x="20" y="20" width="24" height="36" fill="#16294d" opacity="0.3"/>
-          <rect x="48" y="12" width="28" height="44" fill="#16294d" opacity="0.4"/>
-          <rect x="80" y="24" width="20" height="32" fill="#16294d" opacity="0.3"/>
-          <!-- Bigger Patriot launcher -->
-          <rect x="190" y="26" width="70" height="16" fill="#2c3e6b" rx="3"/>
-          <line x1="205" y1="26" x2="185" y2="8" stroke="#2c3e6b" stroke-width="6"/>
-          <line x1="230" y1="26" x2="215" y2="4" stroke="#2c3e6b" stroke-width="6"/>
-          <line x1="250" y1="26" x2="240" y2="6" stroke="#2c3e6b" stroke-width="5"/>
-          <!-- Incoming missile and streak -->
-          <line x1="10" y1="4" x2="200" y2="32" stroke="#c0392b" stroke-width="3.5" stroke-dasharray="5,3"/>
-          <polygon points="200,32 188,27 193,36" fill="#c0392b"/>
-          <!-- Big flames at base -->
-          <circle cx="210" cy="46" r="12" fill="#e74c3c"/>
-          <circle cx="225" cy="42" r="9" fill="#f1c40f"/>
-          <circle cx="200" cy="48" r="7" fill="#e67e22"/>
-        </svg>
-      </div>
-      <div class="card-content">
-        <div class="card-kicker">Middle East · Bahrain</div>
-        <div class="card-headline">Iran hits US Patriot radars in Bahrain; fire at civilian site</div>
-        <div class="card-summary">Iran's Revolutionary Guards said they fired missiles and drones at two US Patriot radars at al-Riffa and Awali. Bahrain reported a civilian industrial facility caught fire; no one was hurt.</div>
-      </div>
-    </div>
+  <!-- MAIN CONTENT SECTION -->
+  <div class="main-content">
+    
+    <!-- LEFT COLUMN: Three Horizontal Rows -->
+    <div class="col-left">
+      
+      <!-- Row 2: Bahrain Strike -->
+      <div class="row-item">
+        <div class="chip-small">2</div>
+        <div class="row-img-box">
+          <svg width="100%" height="100%" viewBox="0 0 190 140" preserveAspectRatio="xMidYMid meet">
+            <!-- Sky / night background -->
+            <rect width="190" height="140" fill="#243044" />
+            <!-- Radar dish (bigger, on clear mast/stand) -->
+            <ellipse cx="55" cy="85" rx="26" ry="10" fill="none" stroke="#e2e8f0" stroke-width="2.5" />
+            <line x1="55" y1="95" x2="55" y2="125" stroke="#e2e8f0" stroke-width="4" />
+            <line x1="35" y1="125" x2="75" y2="125" stroke="#e2e8f0" stroke-width="4" />
+            <!-- Patriot launcher vehicle with clearly angled missile tubes -->
+            <rect x="85" y="100" width="55" height="25" rx="3" fill="#4a5568" />
+            <circle cx="98" cy="125" r="7" fill="#1a202c" />
+            <circle cx="127" cy="125" r="7" fill="#1a202c" />
+            <!-- Angled missile tubes -->
+            <rect x="90" y="80" width="50" height="14" rx="3" fill="#2d3748" transform="rotate(-30 90 80)" stroke="#cbd5e0" stroke-width="1.5" />
+            
+            <!-- Incoming missiles with dashed trails -->
+            <line x1="160" y1="20" x2="110" y2="70" stroke="#f6ad55" stroke-width="1.5" stroke-dasharray="3 3" />
+            <polygon points="105,75 113,68 112,74" fill="#f6ad55" />
 
-    <!-- Card 3: EU-Indonesia Deal -->
-    <div class="card">
-      <div class="card-num-chip">3</div>
-      <div class="card-illu">
-        <!-- SVG: Larger EU gold stars circle + clear handshake / trade icons + bigger rising chart -->
-        <svg width="100%" height="100%" viewBox="0 0 320 56" xmlns="http://www.w3.org/2000/svg">
-          <rect width="320" height="56" fill="#eef3f7"/>
-          <!-- EU Gold Stars circle (enlarged) -->
-          <g transform="translate(50, 28)">
-            <circle cx="0" cy="0" r="24" fill="none" stroke="#d4a437" stroke-width="2" stroke-dasharray="5,3"/>
-            <circle cx="0" cy="-24" r="3.5" fill="#d4a437"/>
-            <circle cx="17" cy="-17" r="3.5" fill="#d4a437"/>
-            <circle cx="24" cy="0" r="3.5" fill="#d4a437"/>
-            <circle cx="17" cy="17" r="3.5" fill="#d4a437"/>
-            <circle cx="0" cy="24" r="3.5" fill="#d4a437"/>
-            <circle cx="-17" cy="17" r="3.5" fill="#d4a437"/>
-            <circle cx="-24" cy="0" r="3.5" fill="#d4a437"/>
-            <circle cx="-17" cy="-17" r="3.5" fill="#d4a437"/>
-          </g>
-          <!-- Clear handshake / partnership icon -->
-          <g transform="translate(130, 20)">
-            <rect x="0" y="4" width="24" height="18" fill="#16294d" rx="2"/>
-            <rect x="22" y="10" width="24" height="18" fill="#2c3e6b" rx="2"/>
-            <line x1="16" y1="12" x2="30" y2="18" stroke="#d4a437" stroke-width="4" stroke-linecap="round"/>
-          </g>
-          <!-- Cargo containers -->
-          <rect x="195" y="24" width="35" height="24" fill="#16294d" rx="2"/>
-          <rect x="235" y="16" width="35" height="32" fill="#2c3e6b" rx="2"/>
-          <!-- Bigger rising chart line -->
-          <polyline points="275,48 290,32 305,38 318,10" fill="none" stroke="#27ae60" stroke-width="4"/>
-          <polygon points="318,10 308,13 313,19" fill="#27ae60"/>
-        </svg>
+            <line x1="180" y1="35" x2="130" y2="85" stroke="#f6ad55" stroke-width="1.5" stroke-dasharray="3 3" />
+            
+            <!-- Building silhouette with orange flames -->
+            <rect x="140" y="80" width="35" height="60" fill="#1a202c" />
+            <polygon points="145,80 152,55 160,80" fill="#ed8936" />
+            <polygon points="155,80 162,60 170,80" fill="#ecc94b" />
+          </svg>
+        </div>
+        <div class="row-text-box">
+          <div class="item-kicker">Middle East · Bahrain</div>
+          <div class="item-headline">Iranian missiles strike US air defences in Bahrain</div>
+          <div class="item-summary">An IRGC missile and drone attack hit US Patriot radars at al-Riffa and Awali; a civilian industrial facility caught fire. No casualties were reported.</div>
+        </div>
       </div>
-      <div class="card-content">
-        <div class="card-kicker">Trade · Europe</div>
-        <div class="card-headline">EU and Indonesia sign landmark trade deal</div>
-        <div class="card-summary">The EU and Indonesia signed a trade pact in Brussels after a decade of talks, scrapping tariffs on up to 98.5% of tariff lines. It still needs approval by the European Parliament.</div>
-      </div>
-    </div>
 
-    <!-- Card 4: COP31 Deadlock -->
-    <div class="card">
-      <div class="card-num-chip">4</div>
-      <div class="card-illu">
-        <!-- SVG: Larger globe + bigger thermometer + bigger smokestacks -->
-        <svg width="100%" height="100%" viewBox="0 0 320 56" xmlns="http://www.w3.org/2000/svg">
-          <rect width="320" height="56" fill="#eef3f7"/>
-          <!-- Globe icon (larger) -->
-          <circle cx="55" cy="28" r="24" fill="none" stroke="#16294d" stroke-width="2.5"/>
-          <path d="M 35,18 Q 55,40 75,18" fill="none" stroke="#16294d" stroke-width="2"/>
-          <path d="M 35,38 Q 55,16 75,38" fill="none" stroke="#16294d" stroke-width="2"/>
-          <!-- Bigger Thermometer with high red bar -->
-          <rect x="145" y="8" width="12" height="42" fill="none" stroke="#c0392b" stroke-width="2.5" rx="6"/>
-          <circle cx="151" cy="44" r="8" fill="#c0392b"/>
-          <rect x="148" y="18" width="6" height="28" fill="#c0392b"/>
-          <!-- Bigger Smokestacks -->
-          <rect x="220" y="20" width="12" height="32" fill="#555" rx="2"/>
-          <rect x="240" y="10" width="14" height="42" fill="#555" rx="2"/>
-          <path d="M 226,20 Q 220,5 205,2" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="3,2"/>
-          <path d="M 247,10 Q 240,0 225,-4" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="3,2"/>
-        </svg>
+      <!-- Row 3: EU-Indonesia Deal -->
+      <div class="row-item">
+        <div class="chip-small">3</div>
+        <div class="row-img-box">
+          <svg width="100%" height="100%" viewBox="0 0 190 140" preserveAspectRatio="xMidYMid meet">
+            <rect width="190" height="140" fill="#e2d9bc" />
+            <!-- Document sheet -->
+            <rect x="45" y="25" width="100" height="95" fill="#ffffff" stroke="#b7ac8c" stroke-width="1" rx="2" />
+            <line x1="60" y1="45" x2="120" y2="45" stroke="#cbd5e0" stroke-width="3" />
+            <line x1="60" y1="60" x2="100" y2="60" stroke="#cbd5e0" stroke-width="2" />
+            <line x1="60" y1="72" x2="115" y2="72" stroke="#cbd5e0" stroke-width="2" />
+            <!-- Wax seal ribbon -->
+            <circle cx="115" cy="95" r="12" fill="#a31621" />
+            <path d="M110,105 L105,120 L115,115 L125,120 L120,105 Z" fill="#a31621" />
+            
+            <!-- EU Flag miniature (top left) -->
+            <g transform="translate(25, 20) scale(0.6)">
+              <rect width="50" height="34" fill="#003399" />
+              <!-- gold stars circle simplified -->
+              <circle cx="25" cy="17" r="10" fill="none" stroke="#ffcc00" stroke-width="1.5" stroke-dasharray="2 3" />
+            </g>
+            <!-- Indonesia Flag miniature (top right) -->
+            <g transform="translate(115, 20) scale(0.6)">
+              <rect width="50" height="34" fill="#ffffff" stroke="#718096" stroke-width="1" />
+              <rect width="50" height="17" fill="#dc143c" />
+            </g>
+          </svg>
+        </div>
+        <div class="row-text-box">
+          <div class="item-kicker">Europe · Trade</div>
+          <div class="item-headline">EU and Indonesia sign landmark trade deal</div>
+          <div class="item-summary">After a decade of talks, the EU and Indonesia signed the CEPA, liberalising 98.5% of tariff lines.</div>
+        </div>
       </div>
-      <div class="card-content">
-        <div class="card-kicker">Climate · COP31</div>
-        <div class="card-headline">COP31 deadlocked as draft drops fossil fuels</div>
-        <div class="card-summary">Climate talks in Antalya ran past their Friday deadline with no deal. A draft dropped all mention of fossil fuels and a $120bn adaptation-finance target; a revised text was tabled early Sunday.</div>
-      </div>
-    </div>
-  </section>
 
-  <!-- 5. GRID ROW 2 -->
-  <section class="grid-row">
-    <!-- Card 5: El Chapo Isidro -->
-    <div class="card">
-      <div class="card-num-chip">5</div>
-      <div class="card-illu">
-        <!-- SVG: Bigger burning truck with visible flames + bigger helicopter -->
-        <svg width="100%" height="100%" viewBox="0 0 320 56" xmlns="http://www.w3.org/2000/svg">
-          <rect width="320" height="56" fill="#eef3f7"/>
-          <!-- Burning truck silhouette (larger) -->
-          <rect x="40" y="24" width="65" height="24" fill="#16294d" rx="3"/>
-          <circle cx="58" cy="50" r="7" fill="#222"/>
-          <circle cx="88" cy="50" r="7" fill="#222"/>
-          <path d="M 50,24 L 65,10 L 95,10 L 105,24 Z" fill="#16294d"/>
-          <!-- Bigger Flames -->
-          <path d="M 65,10 Q 75,-4 85,10 Q 95,0 102,10 Z" fill="#e74c3c"/>
-          <circle cx="80" cy="2" r="10" fill="#f1c40f"/>
-          <circle cx="70" cy="8" r="7" fill="#e67e22"/>
-          <!-- Bigger Helicopter overhead -->
-          <g transform="translate(220, 20)">
-            <ellipse cx="0" cy="0" rx="26" ry="10" fill="#2c3e6b"/>
-            <line x1="-36" y1="-3" x2="36" y2="-3" stroke="#16294d" stroke-width="3"/>
-            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#16294d" stroke-width="2"/>
-            <line x1="26" y1="0" x2="42" y2="6" stroke="#2c3e6b" stroke-width="3"/>
-          </g>
-        </svg>
+      <!-- Row 4: COP31 Deadlock -->
+      <div class="row-item">
+        <div class="chip-small">4</div>
+        <div class="row-img-box">
+          <svg width="100%" height="100%" viewBox="0 0 190 140" preserveAspectRatio="xMidYMid meet">
+            <rect width="190" height="140" fill="#2d3748" />
+            <!-- Globe -->
+            <circle cx="95" cy="75" r="45" fill="#3182ce" stroke="#63b3ed" stroke-width="2" />
+            <path d="M70,50 Q95,40 120,60 T100,100" fill="#48bb78" opacity="0.8" />
+            <path d="M80,85 Q105,100 115,75" fill="#48bb78" opacity="0.8" />
+            <!-- Rising thermometer -->
+            <rect x="145" y="35" width="10" height="70" rx="5" fill="#e2e8f0" />
+            <circle cx="150" cy="110" r="8" fill="#e53e3e" />
+            <rect x="147" y="55" width="6" height="55" rx="3" fill="#e53e3e" />
+            <!-- Clock past midnight -->
+            <circle cx="40" cy="50" r="22" fill="#1a202c" stroke="#cbd5e0" stroke-width="2" />
+            <line x1="40" y1="50" x2="40" y2="35" stroke="#f6ad55" stroke-width="2" />
+            <line x1="40" y1="50" x2="50" y2="52" stroke="#f6ad55" stroke-width="2" />
+          </svg>
+        </div>
+        <div class="row-text-box">
+          <div class="item-kicker">Climate · COP31</div>
+          <div class="item-headline">COP31 deadlocked as draft drops fossil fuels</div>
+          <div class="item-summary">Talks ran past their deadline in Antalya; the draft dropped fossil fuels and a $120bn adaptation target, with a revised text tabled early on 22 November.</div>
+        </div>
       </div>
-      <div class="card-content">
-        <div class="card-kicker">Mexico · Cartels</div>
-        <div class="card-headline">'El Chapo Isidro' captured; 11 dead in Sinaloa</div>
-        <div class="card-summary">Mexican forces captured cartel boss Fausto Isidro Meza Flores, one of FBI's 10 most wanted, in Guasave. Gunmen set trucks ablaze and 11 people were killed in the fighting.</div>
-      </div>
+
     </div>
 
-    <!-- Card 6: Lviv Strike -->
-    <div class="card">
-      <div class="card-num-chip">6</div>
-      <div class="card-illu">
-        <!-- SVG: Larger railway station + bigger explosion flash -->
-        <svg width="100%" height="100%" viewBox="0 0 320 56" xmlns="http://www.w3.org/2000/svg">
-          <rect width="320" height="56" fill="#eef3f7"/>
-          <!-- Building silhouette (larger) -->
-          <rect x="25" y="16" width="90" height="36" fill="#16294d" opacity="0.85"/>
-          <path d="M 25,16 L 70,0 L 115,16 Z" fill="#2c3e6b"/>
-          <!-- Power lines -->
-          <line x1="5" y1="12" x2="135" y2="12" stroke="#444" stroke-width="2"/>
-          <line x1="45" y1="12" x2="45" y2="28" stroke="#444" stroke-width="1.5"/>
-          <!-- Bigger Explosion flash -->
-          <g transform="translate(200, 28)">
-            <circle cx="0" cy="0" r="30" fill="#e74c3c" opacity="0.4"/>
-            <circle cx="0" cy="0" r="14" fill="#c0392b"/>
-            <path d="M-30,0 L30,0 M0,-30 L0,30 M-21,-21 L21,21 M-21,21 L21,-21" stroke="#f1c40f" stroke-width="3"/>
-          </g>
-          <!-- Damaged ruin right -->
-          <path d="M 270,52 L 270,20 L 295,26 L 310,52 Z" fill="#333"/>
-        </svg>
+    <!-- RIGHT RAIL: Three Stacked Cards -->
+    <div class="col-right">
+      
+      <!-- Card 5: El Chapo Isidro Captured -->
+      <div class="card-item">
+        <div class="chip-small">5</div>
+        <div class="card-img-strip">
+          <svg width="100%" height="100%" viewBox="0 0 352 52" preserveAspectRatio="xMidYMid meet">
+            <rect width="352" height="52" fill="#edf2f7" />
+            <!-- Proper police badge (shield/star shape with a small star in the centre) -->
+            <path d="M50,8 L68,14 L68,32 C68,42 50,48 50,48 C50,48 32,42 32,32 L32,14 Z" fill="#d4a437" stroke="#b7791f" stroke-width="1.5" />
+            <polygon points="50,16 53,24 61,24 55,29 57,37 50,33 43,37 45,29 39,24 47,24" fill="#ffffff" />
+            <circle cx="50" cy="27" r="3" fill="#b7791f" />
+            
+            <!-- Handcuffs: TWO linked rings with a short chain between them -->
+            <circle cx="163" cy="26" r="9" fill="none" stroke="#4a5568" stroke-width="2.5" />
+            <circle cx="187" cy="26" r="9" fill="none" stroke="#4a5568" stroke-width="2.5" />
+            <line x1="172" y1="26" x2="178" y2="26" stroke="#4a5568" stroke-width="3" />
+            
+            <!-- Mexican flag: vertical green, white, red with small brown eagle dot in white band -->
+            <g transform="translate(265, 10) scale(0.7)">
+              <rect width="70" height="32" fill="#ffffff" stroke="#718096" stroke-width="1" />
+              <rect x="0" y="0" width="23" height="32" fill="#006341" />
+              <rect x="47" y="0" width="23" height="32" fill="#ce1126" />
+              <circle cx="35" cy="16" r="3" fill="#8b5a2b" />
+            </g>
+          </svg>
+        </div>
+        <div class="card-text-box">
+          <div class="item-kicker">Mexico · Cartels</div>
+          <div class="item-headline">'El Chapo Isidro' captured in Mexico</div>
+          <div class="item-summary">Fausto Isidro Meza Flores, on the FBI's 10 Most Wanted list, was captured in Guasave; 11 died — 7 gunmen and 4 soldiers.</div>
+        </div>
       </div>
-      <div class="card-content">
-        <div class="card-kicker">War · Ukraine</div>
-        <div class="card-headline">Russian strike kills two in Lviv</div>
-        <div class="card-summary">Two people were killed and ten injured when Russian missiles and drones hit Lviv's Sknyliv railway station in a huge overnight barrage of over 400 drones and 110 missiles.</div>
+
+      <!-- Card 6: Lviv Strike -->
+      <div class="card-item">
+        <div class="chip-small">6</div>
+        <div class="card-img-strip">
+          <svg width="100%" height="100%" viewBox="0 0 352 52" preserveAspectRatio="xMidYMid meet">
+            <rect width="352" height="52" fill="#2d3748" />
+            <!-- Station building silhouette (roofline + arched windows + a small clock) -->
+            <rect x="45" y="20" width="95" height="32" fill="#4a5568" />
+            <polygon points="92,4 45,20 140,20" fill="#718096" />
+            <circle cx="92" cy="12" r="4" fill="#f7fafc" stroke="#1a202c" stroke-width="1" />
+            <rect x="55" y="26" width="12" height="20" rx="6" fill="#1a202c" />
+            <rect x="75" y="26" width="12" height="20" rx="6" fill="#1a202c" />
+            <rect x="97" y="26" width="12" height="20" rx="6" fill="#1a202c" />
+            <rect x="117" y="26" width="12" height="20" rx="6" fill="#1a202c" />
+            
+            <!-- Recognisable train (carriage with windows + wheels) -->
+            <rect x="175" y="28" width="80" height="18" rx="3" fill="#a0aec0" />
+            <rect x="182" y="32" width="10" height="9" fill="#1a202c" />
+            <rect x="198" y="32" width="10" height="9" fill="#1a202c" />
+            <rect x="214" y="32" width="10" height="9" fill="#1a202c" />
+            <rect x="230" y="32" width="10" height="9" fill="#1a202c" />
+            <circle cx="190" cy="48" r="4" fill="#1a202c" />
+            <circle cx="235" cy="48" r="4" fill="#1a202c" />
+            
+            <!-- TWO LARGE red explosion starbursts above them -->
+            <polygon points="95,8 101,16 112,14 105,21 110,29 100,24 93,31 92,23 83,22 90,16" fill="#e53e3e" />
+            <polygon points="210,6 216,14 227,12 220,19 225,27 215,22 208,29 207,21 198,20 205,14" fill="#e53e3e" />
+          </svg>
+        </div>
+        <div class="card-text-box">
+          <div class="item-kicker">Ukraine · War</div>
+          <div class="item-headline">Russian strike kills 2 at Lviv station</div>
+          <div class="item-summary">A strike on Sknyliv station killed 2 and injured 10, part of a barrage of 400+ drones and 110+ missiles.</div>
+        </div>
       </div>
+
+      <!-- Card 7: Ireland Win -->
+      <div class="card-item">
+        <div class="chip-small">7</div>
+        <div class="card-img-strip">
+          <svg width="100%" height="100%" viewBox="0 0 352 52" preserveAspectRatio="xMidYMid meet">
+            <rect width="352" height="52" fill="#1a365d" />
+            <!-- Rugby ball icon enlarged ~1.3x -->
+            <ellipse cx="55" cy="26" rx="20" ry="13" fill="#8b4513" transform="rotate(-15 55 26)" />
+            <path d="M42,26 L68,26" stroke="#ffffff" stroke-width="1.5" />
+            <path d="M49,21 L49,31" stroke="#ffffff" stroke-width="1" />
+            <path d="M61,21 L61,31" stroke="#ffffff" stroke-width="1" />
+            
+            <!-- Clean dark scoreboard with LARGE WHITE text IRE 20–17 RSA -->
+            <rect x="110" y="10" width="135" height="32" rx="4" fill="#111111" stroke="#d4a437" stroke-width="2" />
+            <text x="177.5" y="31" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">IRE 20–17 RSA</text>
+            
+            <!-- Irish flag miniature: green, white, orange vertical -->
+            <g transform="translate(265, 10) scale(0.7)">
+              <rect width="70" height="32" fill="#ffffff" stroke="#718096" stroke-width="1" />
+              <rect x="0" y="0" width="23" height="32" fill="#169b62" />
+              <rect x="47" y="0" width="23" height="32" fill="#ff883e" />
+            </g>
+          </svg>
+        </div>
+        <div class="card-text-box">
+          <div class="item-kicker">Sport · Rugby</div>
+          <div class="item-headline">Ireland stun world champions 20–17</div>
+          <div class="item-summary">Ireland beat South Africa 20–17 in Dublin, Baloucoune scoring two tries in the Nations Championship.</div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Card 7: Ireland Rugby -->
-    <div class="card">
-      <div class="card-num-chip">7</div>
-      <div class="card-illu">
-        <!-- SVG: Larger rugby ball + bigger scoreboard -->
-        <svg width="100%" height="100%" viewBox="0 0 320 56" xmlns="http://www.w3.org/2000/svg">
-          <rect width="320" height="56" fill="#eef3f7"/>
-          <!-- Rugby ball oval rotated (larger) -->
-          <g transform="translate(75, 28) rotate(-25)">
-            <ellipse cx="0" cy="0" rx="30" ry="18" fill="#8d5524" stroke="#5c3a21" stroke-width="2"/>
-            <line x1="-18" y1="0" x2="18" y2="0" stroke="#fff" stroke-width="2"/>
-            <line x1="0" y1="-10" x2="0" y2="10" stroke="#fff" stroke-width="1.5"/>
-            <line x1="-9" y1="-6" x2="-9" y2="6" stroke="#fff" stroke-width="1.5"/>
-            <line x1="9" y1="-6" x2="9" y2="6" stroke="#fff" stroke-width="1.5"/>
-          </g>
-          <!-- Larger Scoreboard -->
-          <rect x="165" y="8" width="140" height="40" fill="#0f1e3a" rx="4"/>
-          <text x="235" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#2ecc71" letter-spacing="3">20–17</text>
-        </svg>
-      </div>
-      <div class="card-content">
-        <div class="card-kicker">Sport · Rugby</div>
-        <div class="card-headline">Ireland stun world champions South Africa 20–17</div>
-        <div class="card-summary">Robert Baloucoune scored twice as Ireland beat the Springboks 20–17 at the Aviva Stadium. South Africa still reached the Nations Championship final on a losing bonus point.</div>
-      </div>
-    </div>
-  </section>
+  </div>
 
-  <!-- 6. FOOTER -->
-  <footer>
-    Events reported Sunday 22 November 2026 · Sources: BBC, Reuters, AP, AFP, NYT
-  </footer>
+  <!-- FOOTER -->
+  <div class="footer">
+    Seven stories · Seven places · One day — Events reported Sunday 22 November 2026 · Sources: BBC, Reuters, AP, AFP, NYT
+  </div>
 
 </body>
 </html>
