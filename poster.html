@@ -1,310 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="width:1024px; height:1024px; margin:0; overflow:hidden; box-sizing:border-box">
 <head>
-    <meta charset="UTF-8">
-    <title>NEWS-IMAGE-22NOV</title>
-    <style>
-        body { margin: 0; padding: 0; width: 1024px; height: 1024px; background: #f5eeda; font-family: sans-serif; overflow: hidden; box-sizing: border-box; color: #141414; }
-        .masthead { height: 70px; background: #141414; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; position: relative; }
-        .masthead h1 { font-family: Georgia, serif; font-size: 24px; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
-        .masthead .date { font-size: 14px; font-weight: bold; color: #fff; letter-spacing: 2px; }
-        .masthead .chip { background: #c9a227; color: #000; padding: 4px 8px; font-weight: bold; font-size: 12px; border-radius: 4px; }
-        
-        .map-strip { height: 60px; background: #f5eeda; border-bottom: 1px solid #d8d0ba; display: flex; align-items: center; justify-content: center; }
-        .map-svg { width: 900px; height: 50px; }
-        .pin { fill: #a41e22; }
-        .pin-text { font-size: 8px; font-weight: bold; fill: #141414; text-anchor: middle; }
-
-        .lead-strip { height: 170px; display: flex; padding: 15px; box-sizing: border-box; border-bottom: 2px solid #141414; }
-        .lead-strip .left { width: 65%; }
-        .lead-strip .right { width: 35%; position: relative; }
-        .lead-strip .kicker { color: #a41e22; font-weight: bold; font-size: 11px; letter-spacing: 1px; }
-        .lead-strip h2 { font-family: Georgia, serif; font-size: 26px; margin: 5px 0; }
-        .lead-strip p { font-size: 13px; color: #333; margin: 5px 0; }
-        .lead-strip .chip { background: #a41e22; color: #fff; display: inline-block; padding: 4px 8px; font-weight: bold; font-size: 10px; border-radius: 2px; }
-
-        .big-cards { height: 200px; display: flex; padding: 10px; box-sizing: border-box; gap: 10px; }
-        .card-big { width: 33.3%; border: 1px solid #d8d0ba; background: #fffdf7; display: flex; flex-direction: column; }
-        .card-big .illustration { width: 100%; height: 100px; background: #eee; }
-        .card-big .text { padding: 8px; }
-        .card-big .kicker { color: #a41e22; font-weight: bold; font-size: 9px; }
-        .card-big h4 { font-family: Georgia, serif; font-size: 14px; margin: 3px 0; }
-        .card-big p { font-size: 11px; color: #333; margin: 3px 0; }
-
-        .small-cards { height: 160px; display: flex; padding: 10px; box-sizing: border-box; gap: 10px; }
-        .card-small { width: 33.3%; border: 1px solid #d8d0ba; background: #fffdf7; display: flex; }
-        .card-small .illustration { width: 80px; height: 100%; background: #eee; }
-        .card-small .text { padding: 8px; }
-        .card-small .kicker { color: #a41e22; font-weight: bold; font-size: 9px; }
-        .card-small h4 { font-family: Georgia, serif; font-size: 13px; margin: 3px 0; }
-        .card-small p { font-size: 10px; color: #333; margin: 3px 0; }
-
-        .in-brief { height: 320px; padding: 15px; box-sizing: border-box; }
-        .in-brief h3 { margin: 0 0 10px 0; font-family: Georgia, serif; font-size: 18px; color: #a41e22; text-transform: uppercase; }
-        .in-brief-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-        .story { font-size: 11px; color: #141414; margin-bottom: 5px; }
-        .story b { color: #a41e22; }
-
-        .footer { height: 44px; border-top: 2px solid #141414; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #555; }
-    </style>
+<style>
+  body { width: 1024px; height: 1024px; margin: 0; overflow: hidden; background-color: #f5eeda; color: #141414; font-family: sans-serif; }
+  #masthead { height: 68px; background: #141414; color: white; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; font-family: Georgia, serif; }
+  #map { height: 58px; background: #f5eeda; border-bottom: 1px solid #d8d0ba; display: flex; align-items: center; justify-content: center; }
+  #lead { height: 162px; display: flex; padding: 12px 15px; border-bottom: 2px solid #141414; box-sizing: border-box; }
+  #big-cards { height: 185px; display: flex; padding: 10px; gap: 10px; box-sizing: border-box; }
+  #small-cards { height: 150px; display: flex; padding: 10px; gap: 10px; box-sizing: border-box; }
+  #in-brief { height: 360px; padding: 10px 15px; box-sizing: border-box; }
+  #footer { height: 41px; border-top: 2px solid #141414; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #555; }
+  .kicker { color: #a41e22; font-weight: bold; font-family: sans-serif; }
+  .headline { font-family: Georgia, serif; font-weight: bold; }
+  .deck { font-family: sans-serif; color: #333; }
+  .story-chip { background: #c9a227; color: black; font-weight: bold; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
+  .nato-chip { background: #a41e22; color: white; font-weight: bold; padding: 4px 8px; font-size: 10px; }
+  .card { flex: 1; background: #fffdf7; border: 1px solid #d8d0ba; display: flex; flex-direction: column; overflow: hidden; }
+  .card-img { width: 100%; height: 92px; overflow: hidden; }
+  .card-text { padding: 8px; }
+  .small-card { flex: 1; background: #fffdf7; border: 1px solid #d8d0ba; display: flex; overflow: hidden; }
+  .small-card-img { width: 80px; height: 100%; overflow: hidden; }
+  .small-card-text { padding: 8px; flex: 1; }
+  .in-brief-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; grid-auto-flow: column; grid-template-rows: repeat(10, auto); }
+  .brief-story { font-size: 9px; line-height: 1.2; margin-bottom: 1.5px; font-family: sans-serif; }
+</style>
 </head>
 <body>
-    <div class="masthead">
-        <h1>THE WORLD IN ONE IMAGE</h1>
-        <p class="date">SUNDAY 22 NOVEMBER 2026</p>
-        <div class="chip">26 STORIES · 7 REGIONS</div>
+  <div id="masthead">
+    <div style="font-size: 24px; letter-spacing: 2px;">THE WORLD IN ONE IMAGE</div>
+    <div style="font-size: 14px; font-weight: bold; letter-spacing: 2px;">SUNDAY 22 NOVEMBER 2026</div>
+    <div class="story-chip">37 STORIES · 7 REGIONS</div>
+  </div>
+  <div id="map">
+    <svg class="map-svg" viewBox="0 0 900 50" width="900" height="50">
+        <path d="M100,10 Q200,0 300,10 T500,10 T700,10" fill="#e3dcc8" stroke="#b8b09a" stroke-width="1"/>
+        <g><circle cx="350" cy="20" r="7" fill="#d94f3d"/><text x="350" y="42" text-anchor="middle" font-size="8">POLAND</text></g>
+        <g><circle cx="550" cy="30" r="7" fill="#d94f3d"/><text x="550" y="42" text-anchor="middle" font-size="8">BAHRAIN</text></g>
+        <g><circle cx="300" cy="15" r="7" fill="#d94f3d"/><text x="300" y="42" text-anchor="middle" font-size="8">BRUSSELS</text></g>
+        <g><circle cx="650" cy="20" r="7" fill="#d94f3d"/><text x="650" y="42" text-anchor="middle" font-size="8">ANTALYA</text></g>
+        <g><circle cx="100" cy="20" r="7" fill="#d94f3d"/><text x="100" y="42" text-anchor="middle" font-size="8">GUASAVE</text></g>
+        <g><circle cx="400" cy="25" r="7" fill="#d94f3d"/><text x="400" y="42" text-anchor="middle" font-size="8">LVIV</text></g>
+        <g><circle cx="200" cy="10" r="7" fill="#d94f3d"/><text x="200" y="42" text-anchor="middle" font-size="8">DUBLIN</text></g>
+    </svg>
+  </div>
+  <div id="lead">
+    <div style="flex: 0.65;">
+      <div class="kicker" style="font-size: 11px; letter-spacing: 1px;">EUROPE · SECURITY</div>
+      <div class="headline" style="font-size: 26px; margin: 4px 0;">Rutte vows NATO will defend 'every inch' of Poland</div>
+      <div class="deck" style="font-size: 13px; margin-bottom: 8px;">NATO secretary general Mark Rutte visited Warsaw and vowed the alliance will defend every inch of Poland, after Russian weapons came down on Polish soil. The NATO Council meets on Monday to discuss the response.</div>
+      <span class="nato-chip">NATO COUNCIL MEETS MONDAY</span>
     </div>
-    
-    <div class="map-strip">
-        <svg class="map-svg" viewBox="0 0 900 50">
-            <path d="M100,10 Q200,0 300,10 T500,10 T700,10" fill="#e3dcc8" stroke="#b8b09a" stroke-width="1"/>
-            <g><circle cx="350" cy="20" r="7" class="pin"/><text x="350" y="42" class="pin-text">POLAND</text></g>
-            <g><circle cx="550" cy="30" r="7" class="pin"/><text x="550" y="42" class="pin-text">BAHRAIN</text></g>
-            <g><circle cx="300" cy="15" r="7" class="pin"/><text x="300" y="42" class="pin-text">BRUSSELS</text></g>
-            <g><circle cx="650" cy="20" r="7" class="pin"/><text x="650" y="42" class="pin-text">ANTALYA</text></g>
-            <g><circle cx="100" cy="20" r="7" class="pin"/><text x="100" y="42" class="pin-text">GUASAVE</text></g>
-            <g><circle cx="400" cy="25" r="7" class="pin"/><text x="400" y="42" class="pin-text">LVIV</text></g>
-            <g><circle cx="200" cy="10" r="7" class="pin"/><text x="200" y="42" class="pin-text">DUBLIN</text></g>
+    <div style="flex: 0.35; background: #16263f; display: flex; align-items: center; justify-content: center;">
+      <svg width="100%" height="100%" viewBox="0 0 560 310" preserveAspectRatio="xMidYMid meet">
+        <circle cx="280" cy="155" r="130" fill="none" stroke="#23395d" stroke-width="1.5" stroke-dasharray="4 4" />
+        <circle cx="280" cy="155" r="90" fill="none" stroke="#23395d" stroke-width="1" />
+        <line x1="280" y1="20" x2="280" y2="290" stroke="#23395d" stroke-width="1" stroke-dasharray="2 2" />
+        <line x1="140" y1="155" x2="420" y2="155" stroke="#23395d" stroke-width="1" stroke-dasharray="2 2" />
+        <g transform="translate(280, 155) scale(1.3) translate(-280, -155)">
+          <path d="M200,85 L230,80 L280,78 L340,82 L380,95 L415,120 L425,160 L410,200 L370,225 L320,230 L270,220 L220,205 L180,175 L165,140 L175,105 Z" fill="#2c4a73" stroke="#ffffff" stroke-width="2.5" />
+          <path d="M210,95 L250,90 L300,88 L350,95 L380,115 L395,145 L385,175 L360,195 L310,205 L260,195 L225,180 L195,150 L185,125 Z" fill="#35588c" stroke="#4a6fa5" stroke-width="1" />
+        </g>
+        <circle cx="280" cy="140" r="5" fill="#ffffff" />
+        <circle cx="280" cy="140" r="3" fill="#a31621" />
+        <line x1="280" y1="140" x2="280" y2="105" stroke="#ffffff" stroke-width="2" />
+        <rect x="280" y="105" width="22" height="8" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.5" />
+        <rect x="280" y="113" width="22" height="8" fill="#dc143c" stroke="#1a1a1a" stroke-width="0.5" />
+        <g transform="translate(450, 75)">
+          <circle cx="0" cy="0" r="32" fill="#101d33" stroke="#ffffff" stroke-width="2" />
+          <polygon points="0,-26 7,-7 26,0 7,7 0,26 -7,7 -26,0 -7,-7" fill="#ffffff" />
+          <circle cx="0" cy="0" r="4" fill="#101d33" />
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div id="big-cards">
+    <div class="card">
+      <div class="card-img">
+        <svg viewBox="0 0 320 150" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <rect width="320" height="150" fill="#1b2433"/>
+          <path d="M0,118 Q80,110 160,120 T320,116 L320,150 L0,150 Z" fill="#2a3444"/>
+          <line x1="310" y1="8" x2="205" y2="62" stroke="#d9dde3" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="205" cy="62" r="7" fill="#ff7a1a"/><circle cx="205" cy="62" r="3.5" fill="#ffd54a"/>
+          <line x1="318" y1="70" x2="225" y2="88" stroke="#d9dde3" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="225" cy="88" r="7" fill="#ff7a1a"/><circle cx="225" cy="88" r="3.5" fill="#ffd54a"/>
+          <path d="M38,30 Q85,78 132,30" fill="none" stroke="#c9d4e0" stroke-width="11" stroke-linecap="round"/>
+          <path d="M50,34 Q85,66 120,34" fill="none" stroke="#8fa0b4" stroke-width="4" stroke-linecap="round"/>
+          <rect x="81" y="66" width="8" height="40" fill="#8fa0b4"/>
+          <rect x="65" y="104" width="40" height="8" rx="2" fill="#5b6b80"/>
+          <circle cx="85" cy="70" r="4" fill="#ff7a1a"/>
+          <rect x="228" y="100" width="72" height="34" fill="#4a5260"/>
+          <rect x="228" y="96" width="72" height="6" fill="#5b6472"/>
+          <rect x="238" y="110" width="10" height="9" fill="#ffd54a"/>
+          <rect x="258" y="110" width="10" height="9" fill="#ffd54a"/>
+          <rect x="278" y="110" width="10" height="9" fill="#ffd54a"/>
+          <path d="M250,96 Q246,78 256,66 Q252,80 262,86 Q268,74 264,62 Q276,80 268,96 Z" fill="#ff7a1a"/>
+          <path d="M256,94 Q254,84 260,76 Q262,86 266,90 Q266,82 264,78 Q270,88 264,94 Z" fill="#ffd54a"/>
         </svg>
+      </div>
+      <div class="card-text">
+        <div class="kicker" style="font-size: 9px;">MIDDLE EAST · BAHRAIN</div>
+        <div class="headline" style="font-size: 14px;">Iranian missiles strike US air defences</div>
+        <div class="deck" style="font-size: 11px;">An IRGC missile and drone attack hit US Patriot radars at al-Riffa; a civilian industrial facility caught fire.</div>
+      </div>
     </div>
-
-    <div class="lead-strip">
-        <div class="left">
-            <div class="kicker">EUROPE · SECURITY</div>
-            <h2>Rutte vows NATO will defend 'every inch' of Poland</h2>
-            <p>NATO secretary general Mark Rutte visited Warsaw and vowed the alliance will defend every inch of Poland, after Russian weapons came down on Polish soil. The NATO Council meets on Monday to discuss the response.</p>
-            <div class="chip">NATO COUNCIL MEETS MONDAY</div>
-        </div>
-        <div class="right">
-            <svg viewBox="0 0 360 180" width="100%" height="100%">
-                <path d="M50,20 L300,20 L320,80 L280,150 L100,140 L50,80 Z" fill="#2c4a73" stroke="white" stroke-width="2"/>
-                <circle cx="280" cy="40" r="30" fill="white"/>
-                <path d="M280,20 L285,35 L300,40 L285,45 L280,60 L275,45 L260,40 L275,35 Z" fill="#2c4a73"/>
-                <circle cx="150" cy="80" r="10" fill="white" />
-                <rect x="148" y="60" width="4" height="20" fill="#a41e22" />
-            </svg>
-        </div>
+    <div class="card">
+      <div class="card-img">
+        <svg viewBox="0 0 320 150" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <rect width="320" height="150" fill="#f0ece0"/>
+          <defs><path id="star" d="M0,-4 L1.2,-1.2 L4.2,-1.2 L1.8,0.7 L2.7,3.7 L0,1.9 L-2.7,3.7 L-1.8,0.7 L-4.2,-1.2 L-1.2,-1.2 Z" fill="#d4a437"/></defs>
+          <rect x="28" y="16" width="108" height="66" fill="#1f3f8f"/>
+          <use href="#star" x="82" y="28"/><use href="#star" x="92.5" y="30.8"/><use href="#star" x="100" y="38.5"/>
+          <use href="#star" x="103" y="49"/><use href="#star" x="100" y="59.5"/><use href="#star" x="92.5" y="67.2"/>
+          <use href="#star" x="82" y="70"/><use href="#star" x="71.5" y="67.2"/><use href="#star" x="64" y="59.5"/>
+          <use href="#star" x="61" y="49"/><use href="#star" x="64" y="38.5"/><use href="#star" x="71.5" y="30.8"/>
+          <rect x="190" y="16" width="108" height="33" fill="#ce1126"/>
+          <rect x="190" y="49" width="108" height="33" fill="#ffffff" stroke="#d8d0ba" stroke-width="1"/>
+          <line x1="148" y1="38" x2="180" y2="38" stroke="#d4a437" stroke-width="3"/>
+          <path d="M180,38 L172,33 L172,43 Z" fill="#d4a437"/>
+          <line x1="180" y1="54" x2="148" y2="54" stroke="#d4a437" stroke-width="3"/>
+          <path d="M148,54 L156,49 L156,59 Z" fill="#d4a437"/>
+          <rect x="35" y="104" width="105" height="20" rx="10" fill="#2c4a73"/>
+          <rect x="180" y="104" width="105" height="20" rx="10" fill="#ce1126"/>
+          <rect x="118" y="101" width="10" height="26" rx="3" fill="#ffffff"/>
+          <rect x="188" y="101" width="10" height="26" rx="3" fill="#ffffff"/>
+          <rect x="130" y="100" width="36" height="28" rx="10" fill="#f0c8a0"/>
+          <rect x="154" y="100" width="36" height="28" rx="10" fill="#e8b98e"/>
+        </svg>
+      </div>
+      <div class="card-text">
+        <div class="kicker" style="font-size: 9px;">EUROPE · TRADE</div>
+        <div class="headline" style="font-size: 14px;">EU and Indonesia sign landmark trade deal</div>
+        <div class="deck" style="font-size: 11px;">After a decade of talks, the EU and Indonesia signed the CEPA, liberalising 98.5% of tariff lines.</div>
+      </div>
     </div>
-
-    <div class="big-cards">
-        <div class="card-big">
-            <div class="illustration">
-                <svg viewBox="0 0 320 150" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-                    <rect width="320" height="150" fill="#1b2433"/>
-                    <path d="M0,118 Q80,110 160,120 T320,116 L320,150 L0,150 Z" fill="#2a3444"/>
-                    <line x1="310" y1="8" x2="205" y2="62" stroke="#d9dde3" stroke-width="4" stroke-linecap="round"/>
-                    <circle cx="205" cy="62" r="7" fill="#ff7a1a"/><circle cx="205" cy="62" r="3.5" fill="#ffd54a"/>
-                    <line x1="318" y1="70" x2="225" y2="88" stroke="#d9dde3" stroke-width="4" stroke-linecap="round"/>
-                    <circle cx="225" cy="88" r="7" fill="#ff7a1a"/><circle cx="225" cy="88" r="3.5" fill="#ffd54a"/>
-                    <path d="M38,30 Q85,78 132,30" fill="none" stroke="#c9d4e0" stroke-width="11" stroke-linecap="round"/>
-                    <path d="M50,34 Q85,66 120,34" fill="none" stroke="#8fa0b4" stroke-width="4" stroke-linecap="round"/>
-                    <rect x="81" y="66" width="8" height="40" fill="#8fa0b4"/>
-                    <rect x="65" y="104" width="40" height="8" rx="2" fill="#5b6b80"/>
-                    <circle cx="85" cy="70" r="4" fill="#ff7a1a"/>
-                    <rect x="228" y="100" width="72" height="34" fill="#4a5260"/>
-                    <rect x="228" y="96" width="72" height="6" fill="#5b6472"/>
-                    <rect x="238" y="110" width="10" height="9" fill="#ffd54a"/>
-                    <rect x="258" y="110" width="10" height="9" fill="#ffd54a"/>
-                    <rect x="278" y="110" width="10" height="9" fill="#ffd54a"/>
-                    <path d="M250,96 Q246,78 256,66 Q252,80 262,86 Q268,74 264,62 Q276,80 268,96 Z" fill="#ff7a1a"/>
-                    <path d="M256,94 Q254,84 260,76 Q262,86 266,90 Q266,82 264,78 Q270,88 264,94 Z" fill="#ffd54a"/>
-                </svg>
-            </div>
-            <div class="text">
-                <div class="kicker">MIDDLE EAST · BAHRAIN</div>
-                <h4>Iranian missiles strike US air defences</h4>
-                <p>An IRGC missile and drone attack hit US Patriot radars at al-Riffa; a civilian industrial facility caught fire.</p>
-            </div>
-        </div>
-        <div class="card-big">
-            <div class="illustration">
-                <svg viewBox="0 0 320 150" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-                    <rect width="320" height="150" fill="#f0ece0"/>
-                    <defs>
-                        <path id="star" d="M0,-4 L1.2,-1.2 L4.2,-1.2 L1.8,0.7 L2.7,3.7 L0,1.9 L-2.7,3.7 L-1.8,0.7 L-4.2,-1.2 L-1.2,-1.2 Z" fill="#d4a437"/>
-                    </defs>
-                    <rect x="28" y="16" width="108" height="66" fill="#1f3f8f"/>
-                    <use href="#star" x="82" y="28"/><use href="#star" x="92.5" y="30.8"/><use href="#star" x="100" y="38.5"/>
-                    <use href="#star" x="103" y="49"/><use href="#star" x="100" y="59.5"/><use href="#star" x="92.5" y="67.2"/>
-                    <use href="#star" x="82" y="70"/><use href="#star" x="71.5" y="67.2"/><use href="#star" x="64" y="59.5"/>
-                    <use href="#star" x="61" y="49"/><use href="#star" x="64" y="38.5"/><use href="#star" x="71.5" y="30.8"/>
-                    <rect x="190" y="16" width="108" height="33" fill="#ce1126"/>
-                    <rect x="190" y="49" width="108" height="33" fill="#ffffff" stroke="#d8d0ba" stroke-width="1"/>
-                    <line x1="148" y1="38" x2="180" y2="38" stroke="#d4a437" stroke-width="3"/>
-                    <path d="M180,38 L172,33 L172,43 Z" fill="#d4a437"/>
-                    <line x1="180" y1="54" x2="148" y2="54" stroke="#d4a437" stroke-width="3"/>
-                    <path d="M148,54 L156,49 L156,59 Z" fill="#d4a437"/>
-                    <rect x="35" y="104" width="105" height="20" rx="10" fill="#2c4a73"/>
-                    <rect x="180" y="104" width="105" height="20" rx="10" fill="#ce1126"/>
-                    <rect x="118" y="101" width="10" height="26" rx="3" fill="#ffffff"/>
-                    <rect x="188" y="101" width="10" height="26" rx="3" fill="#ffffff"/>
-                    <rect x="130" y="100" width="36" height="28" rx="10" fill="#f0c8a0"/>
-                    <rect x="154" y="100" width="36" height="28" rx="10" fill="#e8b98e"/>
-                </svg>
-            </div>
-            <div class="text">
-                <div class="kicker">EUROPE · TRADE</div>
-                <h4>EU and Indonesia sign landmark trade deal</h4>
-                <p>After a decade of talks, the EU and Indonesia signed the CEPA, liberalising 98.5% of tariff lines.</p>
-            </div>
-        </div>
-        <div class="card-big">
-            <div class="illustration">
-                <svg viewBox="0 0 320 150" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-                    <rect width="320" height="150" fill="#2c4a4f"/>
-                    <circle cx="82" cy="58" r="32" fill="#3f7f7a" stroke="#9fc7c0" stroke-width="2"/>
-                    <path d="M82,26 Q72,58 82,90 M82,26 Q92,58 82,90" fill="none" stroke="#9fc7c0" stroke-width="1.5"/>
-                    <path d="M52,48 Q82,42 112,48 M52,70 Q82,76 112,70" fill="none" stroke="#9fc7c0" stroke-width="1.5"/>
-                    <path d="M66,44 L78,40 L86,50 L78,58 L68,56 Z" fill="#d8d0ba"/>
-                    <path d="M86,66 L96,62 L102,70 L94,78 L86,74 Z" fill="#d8d0ba"/>
-                    <rect x="140" y="34" width="14" height="60" rx="7" fill="#e8eef0" stroke="#9fc7c0" stroke-width="2"/>
-                    <rect x="144" y="58" width="6" height="38" fill="#d94f3d"/>
-                    <circle cx="147" cy="98" r="10" fill="#d94f3d"/>
-                    <circle cx="147" cy="98" r="4" fill="#ffd0c8"/>
-                    <line x1="224" y1="34" x2="284" y2="34" stroke="#e8eef0" stroke-width="3"/>
-                    <line x1="224" y1="92" x2="284" y2="92" stroke="#e8eef0" stroke-width="3"/>
-                    <path d="M228,36 L280,36 Q276,56 254,63 Q232,56 228,36 Z" fill="#e8eef0" fill-opacity="0.15"/>
-                    <path d="M236,38 L272,38 Q270,54 254,60 Q238,54 236,38 Z" fill="#d8d0ba"/>
-                    <path d="M236,90 L272,90 Q270,74 254,68 Q238,74 236,90 Z" fill="#d8d0ba"/>
-                    <text x="254" y="104" fill="#cfe3dd" font-size="9" font-weight="bold" letter-spacing="1" text-anchor="middle">DEADLOCKED</text>
-                    <ellipse cx="160" cy="124" rx="96" ry="18" fill="#3f6b70" stroke="#9fc7c0" stroke-width="2"/>
-                    <line x1="112" y1="104" x2="112" y2="126" stroke="#d8d0ba" stroke-width="2"/>
-                    <rect x="112" y="100" width="18" height="11" fill="#3f8f8f"/>
-                    <line x1="160" y1="102" x2="160" y2="124" stroke="#d8d0ba" stroke-width="2"/>
-                    <rect x="160" y="98" width="18" height="11" fill="#d8d0ba"/>
-                    <line x1="208" y1="104" x2="208" y2="126" stroke="#d8d0ba" stroke-width="2"/>
-                    <rect x="208" y="100" width="18" height="11" fill="#7fa8a0"/>
-                </svg>
-            </div>
-            <div class="text">
-                <div class="kicker">CLIMATE · COP31</div>
-                <h4>COP31 deadlocked as draft drops fossil fuels</h4>
-                <p>Talks ran past their deadline in Antalya; the draft dropped fossil fuels and a $120bn adaptation target.</p>
-            </div>
-        </div>
+    <div class="card">
+      <div class="card-img">
+        <svg viewBox="0 0 320 150" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <rect width="320" height="150" fill="#2c4a4f"/>
+          <circle cx="82" cy="58" r="32" fill="#3f7f7a" stroke="#9fc7c0" stroke-width="2"/>
+          <path d="M82,26 Q72,58 82,90 M82,26 Q92,58 82,90" fill="none" stroke="#9fc7c0" stroke-width="1.5"/>
+          <path d="M52,48 Q82,42 112,48 M52,70 Q82,76 112,70" fill="none" stroke="#9fc7c0" stroke-width="1.5"/>
+          <path d="M66,44 L78,40 L86,50 L78,58 L68,56 Z" fill="#d8d0ba"/>
+          <path d="M86,66 L96,62 L102,70 L94,78 L86,74 Z" fill="#d8d0ba"/>
+          <rect x="140" y="34" width="14" height="60" rx="7" fill="#e8eef0" stroke="#9fc7c0" stroke-width="2"/>
+          <rect x="144" y="58" width="6" height="38" fill="#d94f3d"/>
+          <circle cx="147" cy="98" r="10" fill="#d94f3d"/>
+          <circle cx="147" cy="98" r="4" fill="#ffd0c8"/>
+          <line x1="224" y1="34" x2="284" y2="34" stroke="#e8eef0" stroke-width="3"/>
+          <line x1="224" y1="92" x2="284" y2="92" stroke="#e8eef0" stroke-width="3"/>
+          <path d="M228,36 L280,36 Q276,56 254,63 Q232,56 228,36 Z" fill="#e8eef0" fill-opacity="0.15"/>
+          <path d="M236,38 L272,38 Q270,54 254,60 Q238,54 236,38 Z" fill="#d8d0ba"/>
+          <path d="M236,90 L272,90 Q270,74 254,68 Q238,74 236,90 Z" fill="#d8d0ba"/>
+          <ellipse cx="160" cy="124" rx="96" ry="18" fill="#3f6b70" stroke="#9fc7c0" stroke-width="2"/>
+          <line x1="112" y1="104" x2="112" y2="126" stroke="#d8d0ba" stroke-width="2"/>
+          <rect x="112" y="100" width="18" height="11" fill="#3f8f8f"/>
+          <line x1="160" y1="102" x2="160" y2="124" stroke="#d8d0ba" stroke-width="2"/>
+          <rect x="160" y="98" width="18" height="11" fill="#d8d0ba"/>
+          <line x1="208" y1="104" x2="208" y2="126" stroke="#d8d0ba" stroke-width="2"/>
+          <rect x="208" y="100" width="18" height="11" fill="#7fa8a0"/>
+          <text x="258" y="106" fill="#cfe3dd" font-size="8.5" font-weight="bold" letter-spacing="1" text-anchor="middle">DEADLOCKED</text>
+        </svg>
+      </div>
+      <div class="card-text">
+        <div class="kicker" style="font-size: 9px;">CLIMATE · COP31</div>
+        <div class="headline" style="font-size: 14px;">COP31 deadlocked as draft drops fossil fuels</div>
+        <div class="deck" style="font-size: 11px;">Talks ran past their deadline in Antalya; the draft dropped fossil fuels and a $120bn adaptation target.</div>
+      </div>
     </div>
-
-    <div class="small-cards">
-        <div class="card-small">
-            <div class="illustration">
-                <svg viewBox="0 0 110 160" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-                    <rect width="110" height="160" fill="#1c1c22"/>
-                    <path d="M55,16 L86,28 L83,66 Q80,84 55,98 Q30,84 27,66 L24,28 Z" fill="#d4a437" stroke="#f2d98a" stroke-width="2"/>
-                    <path d="M55,26 L58.8,37 L70.5,37.6 L61.4,45 L64.4,56.2 L55,49.5 L45.6,56.2 L48.6,45 L39.5,37.6 L51.2,37 Z" fill="#1c1c22"/>
-                    <g stroke="#cfd6de" stroke-width="6" fill="none">
-                        <circle cx="36" cy="126" r="15"/>
-                        <circle cx="74" cy="126" r="15"/>
-                        <path d="M49,124 L61,124" stroke-width="4"/>
-                    </g>
-                    <circle cx="36" cy="126" r="6" fill="#8f99a6"/>
-                    <circle cx="74" cy="126" r="6" fill="#8f99a6"/>
-                    <rect x="30" y="96" width="12" height="14" rx="3" fill="#9aa4b1"/>
-                    <rect x="68" y="96" width="12" height="14" rx="3" fill="#9aa4b1"/>
-                    <rect x="43" y="120" width="6" height="8" rx="2" fill="#9aa4b1"/>
-                    <rect x="61" y="120" width="6" height="8" rx="2" fill="#9aa4b1"/>
-                </svg>
-            </div>
-            <div class="text">
-                <div class="kicker">MEXICO · CARTELS</div>
-                <h4>'El Chapo Isidro' captured in Mexico</h4>
-                <p>Fausto Isidro Meza Flores captured in Guasave; 11 died.</p>
-            </div>
-        </div>
-        <div class="card-small">
-            <div class="illustration">
-                <svg viewBox="0 0 110 160" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-                    <rect width="110" height="160" fill="#26303c"/>
-                    <circle cx="78" cy="26" r="8" fill="#5d6875"/>
-                    <circle cx="84" cy="16" r="10" fill="#6b7684"/>
-                    <circle cx="76" cy="8" r="7" fill="#78838f"/>
-                    <rect x="16" y="52" width="78" height="52" fill="#b9a98a"/>
-                    <rect x="16" y="52" width="78" height="8" fill="#8f8062"/>
-                    <path d="M12,52 L55,32 L98,52 Z" fill="#8f8062"/>
-                    <rect x="22" y="66" width="9" height="38" fill="#d8ccb2"/>
-                    <rect x="44" y="66" width="9" height="38" fill="#d8ccb2"/>
-                    <rect x="66" y="66" width="9" height="38" fill="#d8ccb2"/>
-                    <rect x="84" y="66" width="6" height="38" fill="#d8ccb2"/>
-                    <circle cx="55" cy="62" r="8" fill="#f2efe6" stroke="#4a4132" stroke-width="2"/>
-                    <line x1="55" y1="62" x2="55" y2="57" stroke="#141414" stroke-width="2"/>
-                    <line x1="55" y1="62" x2="60" y2="64" stroke="#141414" stroke-width="2"/>
-                    <rect x="8" y="104" width="94" height="5" fill="#4a5563"/>
-                    <rect x="12" y="118" width="38" height="22" rx="3" fill="#a41e22"/>
-                    <rect x="52" y="121" width="30" height="19" rx="3" fill="#7d1018"/>
-                    <rect x="18" y="122" width="10" height="7" fill="#f2efe6"/>
-                    <rect x="32" y="122" width="10" height="7" fill="#f2efe6"/>
-                    <rect x="58" y="125" width="8" height="7" fill="#f2efe6"/>
-                    <rect x="70" y="125" width="8" height="7" fill="#f2efe6"/>
-                    <circle cx="22" cy="141" r="5" fill="#1a1f26"/>
-                    <circle cx="42" cy="141" r="5" fill="#1a1f26"/>
-                    <circle cx="58" cy="141" r="5" fill="#1a1f26"/>
-                    <circle cx="78" cy="141" r="5" fill="#1a1f26"/>
-                    <rect x="10" y="136" width="74" height="3" fill="#3a424d"/>
-                </svg>
-            </div>
-            <div class="text">
-                <div class="kicker">UKRAINE · WAR</div>
-                <h4>Russian strike kills 2 at Lviv station</h4>
-                <p>A strike on Sknyliv station killed 2 and injured 10.</p>
-            </div>
-        </div>
-        <div class="card-small">
-            <div class="illustration">
-                <svg viewBox="0 0 110 160" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-                    <rect width="110" height="160" fill="#14532d"/>
-                    <rect x="7" y="26" width="96" height="68" rx="4" fill="#0b2417" stroke="#d4a437" stroke-width="2"/>
-                    <text x="55" y="52" font-size="19" font-weight="bold" fill="#f2efe6" text-anchor="middle" font-family="monospace">IRE 20</text>
-                    <text x="55" y="80" font-size="19" font-weight="bold" fill="#f2efe6" text-anchor="middle" font-family="monospace">RSA 17</text>
-                    <line x1="18" y1="59" x2="92" y2="59" stroke="#2f5c3f" stroke-width="1"/>
-                    <g transform="rotate(-18 55 122)">
-                        <ellipse cx="55" cy="122" rx="34" ry="19" fill="#8b5a2b" stroke="#5c3a1a" stroke-width="2"/>
-                        <line x1="40" y1="122" x2="70" y2="122" stroke="#f2efe6" stroke-width="2"/>
-                        <line x1="45" y1="118" x2="45" y2="126" stroke="#f2efe6" stroke-width="1.5"/>
-                        <line x1="55" y1="117" x2="55" y2="127" stroke="#f2efe6" stroke-width="1.5"/>
-                        <line x1="65" y1="118" x2="65" y2="126" stroke="#f2efe6" stroke-width="1.5"/>
-                    </g>
-                </svg>
-            </div>
-            <div class="text">
-                <div class="kicker">SPORT · RUGBY</div>
-                <h4>Ireland stun world champions 20–17</h4>
-                <p>Ireland beat South Africa 20–17 in Dublin.</p>
-            </div>
-        </div>
+  </div>
+  <div id="small-cards">
+    <div class="small-card">
+      <div class="small-card-img">
+        <svg viewBox="0 0 110 160" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <rect width="110" height="160" fill="#1c1c22"/>
+          <path d="M55,16 L86,28 L83,66 Q80,84 55,98 Q30,84 27,66 L24,28 Z" fill="#d4a437" stroke="#f2d98a" stroke-width="2"/>
+          <path d="M55,26 L58.8,37 L70.5,37.6 L61.4,45 L64.4,56.2 L55,49.5 L45.6,56.2 L48.6,45 L39.5,37.6 L51.2,37 Z" fill="#1c1c22"/>
+          <g stroke="#cfd6de" stroke-width="6" fill="none">
+            <circle cx="36" cy="126" r="15"/>
+            <circle cx="74" cy="126" r="15"/>
+            <path d="M49,124 L61,124" stroke-width="4"/>
+          </g>
+          <circle cx="36" cy="126" r="6" fill="#8f99a6"/>
+          <circle cx="74" cy="126" r="6" fill="#8f99a6"/>
+          <rect x="30" y="96" width="12" height="14" rx="3" fill="#9aa4b1"/>
+          <rect x="68" y="96" width="12" height="14" rx="3" fill="#9aa4b1"/>
+          <rect x="43" y="120" width="6" height="8" rx="2" fill="#9aa4b1"/>
+          <rect x="61" y="120" width="6" height="8" rx="2" fill="#9aa4b1"/>
+        </svg>
+      </div>
+      <div class="small-card-text">
+        <div class="kicker" style="font-size: 9px;">MEXICO · CARTELS</div>
+        <div class="headline" style="font-size: 13px;">'El Chapo Isidro' captured in Mexico</div>
+        <div class="deck" style="font-size: 10px;">Fausto Isidro Meza Flores captured in Guasave; 11 died.</div>
+      </div>
     </div>
-
-    <div class="in-brief">
-        <h3>IN BRIEF — 19 MORE STORIES FROM 22 NOVEMBER</h3>
-        <div class="in-brief-content">
-            <div class="col">
-                <div class="story"><b>COPENHAGEN</b> — Denmark expels Russia's defence attaché over an alleged plot to kill a Ukrainian rapper.</div>
-                <div class="story"><b>HELSINKI</b> — Finland restricts airspace after a drone strike sets a Russian cargo ship ablaze.</div>
-                <div class="story"><b>PARIS</b> — Protesters rally for a sixth weekend over living costs; thousands march in Lisbon.</div>
-                <div class="story"><b>DYMER</b> — Russian drone partly collapses an apartment block near Kyiv; 14 missing, 3 killed.</div>
-                <div class="story"><b>KRYVYI RIH</b> — Missile hits Zelenskyy's hometown, killing a 7-year-old boy and a 20-year-old woman; 60 wounded.</div>
-                <div class="story"><b>TEHRAN</b> — Iran unveils an underground "missile city" amid tensions with the US.</div>
-            </div>
-            <div class="col">
-                <div class="story"><b>RIYADH</b> — Houthis say they hit a Saudi refinery; Saudis intercept missiles over Riyadh.</div>
-                <div class="story"><b>GAZA</b> — Israeli strikes continue despite the ceasefire framework.</div>
-                <div class="story"><b>CIKANDE</b> — Candy factory fire in Indonesia kills 3; 34 workers still missing.</div>
-                <div class="story"><b>TOKYO</b> — Japan says Russian military aircraft violated its airspace near Okinoshima.</div>
-                <div class="story"><b>WASHINGTON</b> — Democrats win at least 258 House seats, their largest majority since 1992.</div>
-                <div class="story"><b>JUNÍN</b> — 6.7 earthquake in Peru kills 1, injures 16 and displaces 853 people.</div>
-            </div>
-            <div class="col">
-                <div class="story"><b>BENGHAZI</b> — Russian warship hit at a Libyan port by a suspected Ukrainian sea drone.</div>
-                <div class="story"><b>BAYELSA</b> — Boat carrying mourners capsizes in Nigeria; at least 24 dead, 24 rescued.</div>
-                <div class="story"><b>KHARTOUM</b> — Drones hit homes and a UN building in Sudan's capital.</div>
-                <div class="story"><b>MARKETS</b> — S&P 500 -3.7%, Nikkei -5.06% as the AI sell-off deepens.</div>
-                <div class="story"><b>SPACE</b> — BepiColombo enters orbit around Mercury.</div>
-                <div class="story"><b>CHESS</b> — Gukesh and Sindarov start the world title match.</div>
-                <div class="story"><b>AI WEAPONS</b> — UN talks end with no binding rules.</div>
-            </div>
-        </div>
+    <div class="small-card">
+      <div class="small-card-img">
+        <svg viewBox="0 0 110 160" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <rect width="110" height="160" fill="#26303c"/>
+          <circle cx="78" cy="26" r="8" fill="#5d6875"/>
+          <circle cx="84" cy="16" r="10" fill="#6b7684"/>
+          <circle cx="76" cy="8" r="7" fill="#78838f"/>
+          <rect x="16" y="52" width="78" height="52" fill="#b9a98a"/>
+          <rect x="16" y="52" width="78" height="8" fill="#8f8062"/>
+          <path d="M12,52 L55,32 L98,52 Z" fill="#8f8062"/>
+          <rect x="22" y="66" width="9" height="38" fill="#d8ccb2"/>
+          <rect x="44" y="66" width="9" height="38" fill="#d8ccb2"/>
+          <rect x="66" y="66" width="9" height="38" fill="#d8ccb2"/>
+          <rect x="84" y="66" width="6" height="38" fill="#d8ccb2"/>
+          <circle cx="55" cy="62" r="8" fill="#f2efe6" stroke="#4a4132" stroke-width="2"/>
+          <line x1="55" y1="62" x2="55" y2="57" stroke="#141414" stroke-width="2"/>
+          <line x1="55" y1="62" x2="60" y2="64" stroke="#141414" stroke-width="2"/>
+          <rect x="8" y="104" width="94" height="5" fill="#4a5563"/>
+          <rect x="12" y="118" width="38" height="22" rx="3" fill="#a41e22"/>
+          <rect x="52" y="121" width="30" height="19" rx="3" fill="#7d1018"/>
+          <rect x="18" y="122" width="10" height="7" fill="#f2efe6"/>
+          <rect x="32" y="122" width="10" height="7" fill="#f2efe6"/>
+          <rect x="58" y="125" width="8" height="7" fill="#f2efe6"/>
+          <rect x="70" y="125" width="8" height="7" fill="#f2efe6"/>
+          <circle cx="22" cy="141" r="5" fill="#1a1f26"/>
+          <circle cx="42" cy="141" r="5" fill="#1a1f26"/>
+          <circle cx="58" cy="141" r="5" fill="#1a1f26"/>
+          <circle cx="78" cy="141" r="5" fill="#1a1f26"/>
+          <rect x="10" y="136" width="74" height="3" fill="#3a424d"/>
+        </svg>
+      </div>
+      <div class="small-card-text">
+        <div class="kicker" style="font-size: 9px;">UKRAINE · WAR</div>
+        <div class="headline" style="font-size: 13px;">Russian strike kills 2 at Lviv station</div>
+        <div class="deck" style="font-size: 10px;">A strike on Sknyliv station killed 2 and injured 10.</div>
+      </div>
     </div>
-
-    <div class="footer">
-        26 stories · 7 regions · One day — Events reported Sunday 22 November 2026 · Sources: BBC, Reuters, AP, AFP, NYT
+    <div class="small-card">
+      <div class="small-card-img">
+        <svg viewBox="0 0 110 160" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <rect width="110" height="160" fill="#14532d"/>
+          <rect x="7" y="26" width="96" height="68" rx="4" fill="#0b2417" stroke="#d4a437" stroke-width="2"/>
+          <text x="55" y="52" font-size="19" font-weight="bold" fill="#f2efe6" text-anchor="middle" font-family="monospace">IRE 20</text>
+          <text x="55" y="80" font-size="19" font-weight="bold" fill="#f2efe6" text-anchor="middle" font-family="monospace">RSA 17</text>
+          <line x1="18" y1="59" x2="92" y2="59" stroke="#2f5c3f" stroke-width="1"/>
+          <g transform="rotate(-18 55 122)">
+            <ellipse cx="55" cy="122" rx="34" ry="19" fill="#8b5a2b" stroke="#5c3a1a" stroke-width="2"/>
+            <line x1="40" y1="122" x2="70" y2="122" stroke="#f2efe6" stroke-width="2"/>
+            <line x1="45" y1="118" x2="45" y2="126" stroke="#f2efe6" stroke-width="1.5"/>
+            <line x1="55" y1="117" x2="55" y2="127" stroke="#f2efe6" stroke-width="1.5"/>
+            <line x1="65" y1="118" x2="65" y2="126" stroke="#f2efe6" stroke-width="1.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="small-card-text">
+        <div class="kicker" style="font-size: 9px;">SPORT · RUGBY</div>
+        <div class="headline" style="font-size: 13px;">Ireland stun world champions 20–17</div>
+        <div class="deck" style="font-size: 10px;">Ireland beat South Africa 20–17 in Dublin.</div>
+      </div>
     </div>
+  </div>
+  <div id="in-brief">
+    <div style="font-size: 18px; font-weight: bold; color: #a41e22; margin-bottom: 6px; font-family: Georgia, serif;">IN BRIEF — 30 MORE STORIES FROM 22 NOVEMBER</div>
+    <div class="in-brief-grid">
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">COPENHAGEN —</span> Denmark expels Russia's defence attaché over an alleged plot to kill a Ukrainian rapper.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">HELSINKI —</span> Finland restricts airspace after a drone strike sets a Russian cargo ship ablaze.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">PARIS —</span> Protesters rally for a sixth weekend over living costs; thousands march in Lisbon.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">BRUSSELS —</span> EU proposes a tax on big tech to fund its budget.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">BRUSSELS —</span> Belgium faces an air-traffic shutdown as a national strike looms on Monday.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">DYMER —</span> Russian drone partly collapses an apartment block near Kyiv; 14 missing, 3 killed.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">KRYVYI RIH —</span> Missile hits Zelenskyy's hometown, killing a 7-year-old boy and a 20-year-old woman; 60 wounded.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">KYIV —</span> Zelensky presses the US to release paid-for Patriot missiles as strikes continue.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">TALKS —</span> Russia-Ukraine peace negotiations enter a critical phase over security guarantees.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">TOKYO —</span> Japan says Russian military aircraft violated its airspace near Okinoshima.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">TEHRAN —</span> Iran unveils an underground "missile city" amid tensions with the US.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">RIYADH —</span> Houthis say they hit a Saudi refinery; Saudis intercept missiles over Riyadh.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">GAZA —</span> Israeli strikes continue despite the ceasefire framework.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">RAMALLAH —</span> Settlers torch vehicles and homes in West Bank villages; Israel opens an inquiry.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">BEIRUT —</span> Lebanon faces Israeli pressure and a Hezbollah disarmament dispute.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">CIKANDE —</span> Candy factory fire in Indonesia kills 3; 34 workers still missing.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">BEIJING —</span> China cuts the stock-margin deposit requirement to 80% on three exchanges.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">BEIJING —</span> China's spy agency reportedly ran a campaign to obtain AI chips.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">WASHINGTON —</span> Democrats win at least 258 House seats, their largest majority since 1992.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">JUNÍN —</span> 6.7 earthquake in Peru kills 1, injures 16 and displaces 853 people.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">WASHINGTON —</span> Trump says he will work with Democrats on a 10% credit-card interest cap.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">WASHINGTON —</span> FBI investigates an intrusion involving the National Crime Information Center.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">SAN SALVADOR —</span> Blast kills 3 soldiers handling explosives in El Salvador.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">BENGHAZI —</span> Russian warship hit at a Libyan port by a suspected Ukrainian sea drone.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">BAYELSA —</span> Boat carrying mourners capsizes in Nigeria; at least 24 dead, 24 rescued.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">KHARTOUM —</span> Drones hit homes and a UN building in Sudan's capital.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">MARKETS —</span> S&P 500 -3.7%, Nikkei -5.06% as the AI sell-off deepens.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">SPACE —</span> BepiColombo enters orbit around Mercury.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">CHESS —</span> Gukesh and Sindarov start the world title match.</div>
+      <div class="brief-story"><span style="color:#a41e22; font-weight:bold;">AI WEAPONS —</span> UN talks end with no binding rules.</div>
+    </div>
+  </div>
+  <div id="footer">37 stories · 7 regions · One day — Events reported Sunday 22 November 2026 · Sources: BBC, Reuters, AP, AFP, NYT</div>
 </body>
 </html>
